@@ -30,7 +30,7 @@ public class AccountController {
 
     @GetMapping("/Select")
     public String Select() {
-        return "Select s";
+        return "Select s s";
     }
 
     @PostMapping("/Save")
