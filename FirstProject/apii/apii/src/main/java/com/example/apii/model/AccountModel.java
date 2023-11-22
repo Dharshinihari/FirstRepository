@@ -23,8 +23,11 @@ public class AccountModel {
 
     @JsonProperty("name")
     public String getName() {return this.name;}
+    @JsonProperty("accountid")
     public String  getaccountid()  {return this.accountid;}
+    @JsonProperty("isactive")
     public String getIsactive() {return this.isactive;}
+    @JsonProperty("total")
     public String getTotal() {return this.total;}
 
 
