@@ -1,44 +1,54 @@
 package com.example.apii.model;
 
+import com.example.apii.repository.AccountRepository;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class AccountModel {
-    private String accountid;
-    private String name;
-    private String isactive;
-    private String total;
+import java.util.Optional;
 
 
-    public AccountModel() {
+@Document("account")
+public class AccountModel
+{
+    @Id
+    private String id;
+    public String getId() {
+        return id;
     }
-    public AccountModel(String name, String accountid, String isactive, String total) {
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private Integer accountid;
+    private String name;
+
+    public AccountModel( )
+    {
+
+
+    }
+    public AccountModel(Integer accountid,String name) {
         this.accountid = accountid;
         this.name = name;
-        this.isactive = isactive;
-        this.total = total;
-
-
+    }
+    @JsonProperty("accountid")
+    public Integer getaccountid() {
+        return accountid;
     }
 
+    public void setaccountid(Integer accountid) {
+        this.accountid = accountid;
+    }
 
     @JsonProperty("name")
-    public String getName() {return this.name;}
-    @JsonProperty("accountid")
-    public String  getaccountid()  {return this.accountid;}
-    @JsonProperty("isactive")
-    public String getIsactive() {return this.isactive;}
-    @JsonProperty("total")
-    public String getTotal() {return this.total;}
+    public String getName() {
+        return this.name;
+    }
 
-
-    public void setName(String name) {this.name = name;}
-    public void setaccountid(String  accountid) {this.accountid = accountid;}
-    public void setIsactive(String isactive) {this.isactive = isactive;}
-    public void setTotal(String total) {this.total = total;}
-
-
-
-
-
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
